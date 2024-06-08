@@ -6,11 +6,11 @@ This project implements a Monte Carlo simulation to model the future value of a 
 Monte Carlo simulation is a powerful statistical technique used to understand the impact of risk and uncertainty in prediction and forecasting models. In the context of financial portfolios, it helps in modeling the behavior of asset returns and portfolio value under different scenarios.
 
 This Python script performs the following tasks:
-<ol>Fetches historical stock data: Using the Yahoo Finance API.</ol>
-<ol>Calculates statistical properties: Mean returns and covariance matrix of the selected stocks.</ol>
-<ol>Generates random weights: For the stocks in the portfolio.</ol>
-<ol>Simulates future portfolio values: Using Monte Carlo simulation.</ol>
-<ol>Plots the simulation results: To visualize the range of possible outcomes for the portfolio value.</ol>
+<ol>1. Fetches historical stock data: Using the Yahoo Finance API.</ol>
+<ol>2. Calculates statistical properties: Mean returns and covariance matrix of the selected stocks.</ol>
+<ol>3. Generates random weights: For the stocks in the portfolio.</ol>
+<ol>4. Simulates future portfolio values: Using Monte Carlo simulation.</ol>
+<ol>5. Plots the simulation results: To visualize the range of possible outcomes for the portfolio value.</ol>
 
 ## Prerequisites
 Ensure you have the following libraries installed:
