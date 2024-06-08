@@ -21,19 +21,21 @@ Ensure you have the following libraries installed:
 <ul>yfinance</ul>
 You can install these libraries using pip install [library]
 
+## Running the MC simulation
 Run the Monte Carlo.py script to execute the Monte Carlo simulation. The script fetches data for 5 preselected Australian stocks, computes their mean returns and covariance matrix, and then runs the simulation to predict future portfolio values.
 
-Fetch Data:
+**Fetch Data**:
 It defines a get_data function to fetch historical stock data from Yahoo Finance, compute daily returns, mean returns, and the covariance matrix.
 
-Define Portfolio Weights:
+**Define Portfolio Weights**:
 It generates random weights for the stocks in the portfolio and normalizes them to sum up to 1.
 
-Monte Carlo Simulation:
+**Monte Carlo Simulation**:
 The simulation runs multiple iterations, generating possible future values for the portfolio based on the assumption that daily returns follow a Multivariate Normal Distribution hence Cholesky Decomposition is used to determine the Lower Triangle Matrix.
 
-Plot Results:
-The script plots the results of the simulation, showing the range of possible outcomes for the portfolio value over time.
+**Plot Results**:
+The script plots the results of the simulation, showing the range of possible outcomes for the portfolio value over time. Choice of time period for this simulation is 100 days.
 
-Example Output
+**Example Output**
 The script will output a plot similar to the following:
+<img src="Figure1" />
