@@ -16,17 +16,17 @@ def get_data(stocks, start, end):
     stockData = stockData['Close']  # only interested in daily changes
     returns = stockData.pct_change()
     meanReturns = returns.mean()
-    covMatrix = returns.cov()
+    covMatrix = returns.cov()       # cov btw % change in daily close price of all stocks??
     return meanReturns, covMatrix
 
 
 # just some random Austrlian stocks
 stockList = ['CBA', 'BHP', 'TLS', 'NAB', 'WBC']
 # Add '.AX' suffix for Australian stocks
-stocks = [stock + '.AX' for stock in stockList] 
+stocks = [stock + '.AX' for stock in stockList]
 endDate = dt.datetime.now()
-# the time range determines the covMatrix, super crucial
-startDate = endDate - dt.timedelta(days=300)
+# the time range determines the covMatrix. 
+startDate = endDate - dt.timedelta(days=300)    # Could use parameter tuning for this, 300 is just a fictitious value for this simulation
 
 meanReturns, covMatrix = get_data(stocks, startDate, endDate)
 
@@ -39,7 +39,7 @@ weights /= np.sum(weights)  # normalise all weights so that they sum up to 1
 print(weights)
 
 # Monte Carlo Method
-# number of simulations
+# number of simulations, also just fictitious paramerer values
 mc_sims = 100
 T = 100 # timeframe in days
 
@@ -47,7 +47,10 @@ T = 100 # timeframe in days
 meanM = np.full(shape=(T, len(weights)), fill_value=meanReturns)   # shape depends on number of days and number of stocks
 meanM = meanM.T     # Transpose for computation, why?
 
-portfolio_sims = np.full(shape=(T, mc_sims), fill_value=0.0)    # 0.0 is so that we can take in float values
+portfolio_sims = np.full(shape=(T, mc_sims), fill_value=0.0)    # 0.0 is so that we want to take in float values
+
+# layering:  meanM is a subset of portfolio_sims
+# Awareness of time period in the layers: get_data is T-300, meanM and portfolio_sims are T+100 (MC is like time travelling- predicting the future)
 
 # Initialise an initial portfolio value
 initialPortfolio = 10000
@@ -56,9 +59,12 @@ initialPortfolio = 10000
 for m in range(0, mc_sims):
     # MC loops
     z = np.random.normal(size=(T, len(weights)))   # uncorrelated random variables from the normal dist
-    L = np.linalg.cholesky(covMatrix)
-    dailyReturns = meanM + np.inner(L, z)              # np.inner() is the dot prod of all the stocks in the portfolio. notice that the meanM = meanM.T allows for matrix addition in this step since matrix size is now correct
+    L = np.linalg.cholesky(covMatrix)              # here we are finding the Lower Triangle Matrix
+    dailyReturns = meanM + np.inner(L, z)          # np.inner() is the dot prod of all the stocks in the portfolio. notice that the meanM = meanM.T allows for matrix addition in this step since matrix size is now correct
     portfolio_sims[:,m] = np.cumprod(np.inner(weights, dailyReturns.T)+1)*initialPortfolio
+
+# dailyReturns are correlated according to the historical covariance matrix and centered around the historical mean returns.
+# meanM -> dailyReturns -> dailyReturns*weights -> portfolio_sims 
 
 # plot the portfolio simulation
 plt.plot(portfolio_sims)
@@ -66,3 +72,5 @@ plt.ylabel('Portfolio Value ($S)')
 plt.xlabel('Days')
 plt.title('MC simulation of a stock portfolio')
 plt.show()
+
+# theres alot of overlaying and interrelating of data and especially time. very interesting. this model is definitely not robust 
