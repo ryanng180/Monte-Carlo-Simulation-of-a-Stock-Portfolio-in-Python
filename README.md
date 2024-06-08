@@ -36,6 +36,7 @@ pip install pandas numpy matplotlib yfinance
 **Example Output**
 <ol>The script will output a plot similar to the following:</ol>
 <ol><img src="Figure_1.png" /></ol>
+<ol></ol>
 
 ## Potential Improvements
 **Data Handling and Cleaning:**
