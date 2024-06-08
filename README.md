@@ -38,4 +38,4 @@ The script plots the results of the simulation, showing the range of possible ou
 
 **Example Output**
 The script will output a plot similar to the following:
-<img src="Figure1" />
+<img src="Figure_1.png" />
