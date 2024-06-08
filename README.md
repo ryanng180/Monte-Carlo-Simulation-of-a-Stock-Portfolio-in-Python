@@ -40,26 +40,26 @@ The script will output a plot similar to the following:
 <img src="Figure_1.png" />
 
 ## Potential Improvements
-<ol>Data Handling and Cleaning:
+<ol>Data Handling and Cleaning:</ol>
 Ensure that the data is clean and there are no missing values, outliers, or anomalies. You can include additional data cleaning steps to handle such issues.
-The current code uses forward and backward filling for missing data. While this is a quick solution, more sophisticated methods (e.g., interpolation or regression techniques) might provide better results.</ol>
+The current code uses forward and backward filling for missing data. While this is a quick solution, more sophisticated methods (e.g., interpolation or regression techniques) might provide better results.
 
-<ol>Parameterization:
+<ol>Parameterization:</ol>
 Allow for user-defined parameters such as the number of simulations (mc_sims), the investment horizon (T), and the initial portfolio value (initialPortfolio).
-Implement input validation to ensure the parameters are within reasonable ranges.</ol>
+Implement input validation to ensure the parameters are within reasonable ranges.
 
-<ol>Distribution Assumption:
-The assumption that returns follow a multivariate normal distribution might not hold in all cases. Consider exploring other distributions (e.g., t-distribution) or using empirical distributions derived from historical data.</ol>
+<ol>Distribution Assumption:</ol>
+The assumption that returns follow a multivariate normal distribution might not hold in all cases. Consider exploring other distributions (e.g., t-distribution) or using empirical distributions derived from historical data.
 
-<ol>Performance Optimization:
-For large-scale simulations, consider performance optimization techniques such as parallel processing or vectorized operations to speed up computations.</ol>
+<ol>Performance Optimization:</ol>
+For large-scale simulations, consider performance optimization techniques such as parallel processing or vectorized operations to speed up computations.
 
-<ol>Scenario Analysis:
-Include features for stress testing and scenario analysis to evaluate how the portfolio performs under different economic conditions.</ol>
+<ol>Scenario Analysis:</ol>
+Include features for stress testing and scenario analysis to evaluate how the portfolio performs under different economic conditions.
 
-<ol>Risk Metrics:
-Calculate and report additional risk metrics such as Value at Risk (VaR), Conditional Value at Risk (CVaR), Sharpe Ratio, and Maximum Drawdown.</ol>
+<ol>Risk Metrics:</ol>
+Calculate and report additional risk metrics such as Value at Risk (VaR), Conditional Value at Risk (CVaR), Sharpe Ratio, and Maximum Drawdown.
 
-<ol>Visualization and Reporting:
+<ol>Visualization and Reporting:</ol>
 Enhance the visualization by adding more informative plots, such as histograms of final portfolio values, confidence intervals, and comparative plots for different scenarios.
-Generate summary reports with key statistics and findings from the simulations.</ol>
+Generate summary reports with key statistics and findings from the simulations.
