@@ -19,7 +19,7 @@ pip install pandas numpy matplotlib yfinance
 ```
 
 ## Running the MC simulation
-<ol>Run the Monte Carlo.py script to execute the Monte Carlo simulation. The script fetches data for 5 preselected Australian stocks, computes their mean returns and covariance matrix, and then runs the simulation to predict future portfolio values.</ol>
+<ol>Run the Monte_Carlo.py script to execute the Monte Carlo simulation. The script fetches data for 5 preselected Australian stocks, computes their mean returns and covariance matrix, and then runs the simulation to predict future portfolio values.</ol>
 
 **Fetch Data**:
 <ol>It defines a get_data function to fetch historical stock data from Yahoo Finance, compute daily returns, mean returns, and the covariance matrix.</ol>
