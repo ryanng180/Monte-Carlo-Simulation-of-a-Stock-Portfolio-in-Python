@@ -1,6 +1,5 @@
 # Monte-Carlo-Simulation-of-a-Stock-Portfolio-in-Python
 
-Monte Carlo Simulation of a Stock Portfolio
 This project implements a Monte Carlo simulation to model the future value of a stock portfolio over a given timeframe. The simulation is based on historical stock data and generates multiple potential outcomes to assess the risk and return of the portfolio.
 
 ## Project Overview
@@ -38,4 +37,5 @@ The script plots the results of the simulation, showing the range of possible ou
 
 **Example Output**
 The script will output a plot similar to the following:
+<br>
 <img src="Figure_1.png" />
